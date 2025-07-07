@@ -17,7 +17,7 @@ async function displayUser(username) {
     // Pedimos los datos del usuario. await hace que el código espere aquí la respuesta.
     const response = await fetch(`${usersEndpoint}/${username}`);
     
-    // Convertimos la respuesta a un formato que JavaScript pueda leer (JSON).
+    // Convertimos la respuesta a JSON.
     const data = await response.json();
     console.log(data); // Muestra los datos en la consola para revisarlos.
 
@@ -27,7 +27,7 @@ async function displayUser(username) {
     $l.textContent = data.location;
     
   } catch (err) {
-    // Si algo sale mal en el 'try', este código se ejecuta.
+    // Si algo sale mal en el try, este código se ejecuta.
     handleError(err);
   }
 }
